@@ -78,7 +78,6 @@ class InstagramPayloads extends Instagram
             $body = $response->getBody()->getContents();
         } catch (GuzzleException $e) {
             echo 'Graph returned an error: '.$e->getMessage();
-            exit;
         }
 
         return json_decode($body, true);
@@ -111,7 +110,6 @@ class InstagramPayloads extends Instagram
             $body = $response->getBody()->getContents();
         } catch (GuzzleException $e) {
             echo 'Graph returned an error: ' . $e->getMessage();
-            exit;
         }
 
         return json_decode($body, true);
