@@ -47,8 +47,7 @@ class InstagramPayloads extends Instagram
 
             $body = $response->getBody()->getContents();
         } catch (GuzzleException $e) {
-            echo 'Graph returned an error: '.$e->getMessage();
-            exit;
+            return $e->getResponse()->getBody()->getContents();
         }
 
         return json_decode($body, true);
@@ -77,7 +76,7 @@ class InstagramPayloads extends Instagram
 
             $body = $response->getBody()->getContents();
         } catch (GuzzleException $e) {
-            echo 'Graph returned an error: '.$e->getMessage();
+            return $e->getResponse()->getBody()->getContents();
         }
 
         return json_decode($body, true);
@@ -109,7 +108,7 @@ class InstagramPayloads extends Instagram
 
             $body = $response->getBody()->getContents();
         } catch (GuzzleException $e) {
-            echo 'Graph returned an error: ' . $e->getMessage();
+            return $e->getResponse()->getBody()->getContents()
         }
 
         return json_decode($body, true);
