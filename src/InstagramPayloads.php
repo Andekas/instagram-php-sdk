@@ -108,7 +108,7 @@ class InstagramPayloads extends Instagram
 
             $body = $response->getBody()->getContents();
         } catch (GuzzleException $e) {
-            return $e->getResponse()->getBody()->getContents()
+            return $e->getResponse()->getBody()->getContents();
         }
 
         return json_decode($body, true);
